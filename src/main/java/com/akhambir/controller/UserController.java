@@ -26,7 +26,5 @@ public class UserController {
         } else {
             throw new RuntimeException("User " + user + " does not exist");
         }
-
     }
-
 }
