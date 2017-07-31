@@ -1,0 +1,27 @@
+package com.akhambir.controller;
+
+import com.akhambir.model.User;
+import com.akhambir.service.UserService;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class CreateUserController {
+
+    private UserService userService;
+
+    public CreateUserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    public void process(HttpServletRequest request, HttpServletResponse response) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        String token = username + System.nanoTime();
+        User user = new User(username, password, token);
+        userService.create(user);
+        response.addCookie(new Cookie("TOKEN", token));
+    }
+}

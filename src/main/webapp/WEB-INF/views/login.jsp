@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <form method="post" action="<c:url value="/login"/>">
+    <form method="post" action="<c:url value="/root/login"/>">
 
         <input title="Username" type="text" name="userName">
 

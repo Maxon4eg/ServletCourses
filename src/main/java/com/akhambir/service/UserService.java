@@ -6,4 +6,5 @@ public interface UserService {
 
     User getUser(User user);
 
+    void create(User user);
 }

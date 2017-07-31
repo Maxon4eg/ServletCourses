@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Profile</title>
 </head>
 <body>
-
-    Hello + ${requestScope.user.userName}
-
+    <h2>Profile Page</h2>
 </body>
 </html>

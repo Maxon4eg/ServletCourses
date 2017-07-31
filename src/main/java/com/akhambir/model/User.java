@@ -2,12 +2,23 @@ package com.akhambir.model;
 
 public class User {
 
+    private Long userId;
     private String userName;
     private String password;
+    private String token;
 
-    public User(String userName, String password) {
+    public User(String userName, String password, String token) {
         this.userName = userName;
         this.password = password;
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getUserName() {
@@ -24,6 +35,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     @Override

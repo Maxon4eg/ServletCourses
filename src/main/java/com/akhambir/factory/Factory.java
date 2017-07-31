@@ -1,7 +1,7 @@
 package com.akhambir.factory;
 
+import com.akhambir.controller.CreateUserController;
 import com.akhambir.controller.GetAllCategoriesController;
-import com.akhambir.controller.UserController;
 import com.akhambir.dao.UserDaoImpl;
 import com.akhambir.dao.CategoryDao;
 import com.akhambir.dao.CategoryDaoImpl;
@@ -12,15 +12,11 @@ import com.akhambir.service.UserServiceImpl;
 
 public class Factory {
 
-    public static UserController getUserController() {
-        return new UserController(Factory.getUserService());
-    }
-
     private static UserService getUserService() {
         return new UserServiceImpl(Factory.getUserDao());
     }
 
-    private static UserDaoImpl getUserDao() {
+    public static UserDaoImpl getUserDao() {
         return new UserDaoImpl();
     }
 
@@ -34,5 +30,9 @@ public class Factory {
 
     private static CategoryDao getCategoryDao() {
         return new CategoryDaoImpl();
+    }
+
+    public static CreateUserController getCreateUserController() {
+        return new CreateUserController(getUserService());
     }
 }
