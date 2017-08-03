@@ -24,5 +24,6 @@ public class CreateUserController {
         User user = new User(username, password, token, email);
         userService.create(user);
         response.addCookie(new Cookie("TOKEN", token));
+        request.getSession().invalidate();
     }
 }
