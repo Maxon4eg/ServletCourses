@@ -6,8 +6,9 @@
 </head>
 <body>
 <form method="post" action="<c:url value="/root/signup"/>">
-    <input type="text" title="username" name="username"><br>
+    <input title="username" name="username"><br>
     <input type="password" title="password" name="password"><br>
+    <input type="text" title="email" name="email"><br>
     <input type="submit" value="Sign Up">
 </form>
 </body>

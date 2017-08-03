@@ -2,6 +2,7 @@ package com.akhambir.dao;
 
 import com.akhambir.model.Category;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,10 @@ public class CategoryDaoImpl extends AbstractDao<Category> implements CategoryDa
         categoryList.add(new Category(1L, "Shoes", null));
         categoryList.add(new Category(2L, "Dresses", null));
         categoryList.add(new Category(3L, "Pants", null));
+    }
+
+    public CategoryDaoImpl(Connection connection) {
+        super(connection);
     }
 
 

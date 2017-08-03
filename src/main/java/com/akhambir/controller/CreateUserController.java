@@ -18,9 +18,10 @@ public class CreateUserController {
     public void process(HttpServletRequest request, HttpServletResponse response) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String email = request.getParameter("email");
 
         String token = username + System.nanoTime();
-        User user = new User(username, password, token);
+        User user = new User(username, password, token, email);
         userService.create(user);
         response.addCookie(new Cookie("TOKEN", token));
     }

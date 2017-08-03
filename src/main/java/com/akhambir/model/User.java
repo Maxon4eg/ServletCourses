@@ -6,11 +6,13 @@ public class User {
     private String userName;
     private String password;
     private String token;
+    private String email;
 
-    public User(String userName, String password, String token) {
+    public User(String userName, String password, String token, String email) {
         this.userName = userName;
         this.password = password;
         this.token = token;
+        this.email=email;
     }
 
     public String getToken() {
@@ -62,4 +64,13 @@ public class User {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }
