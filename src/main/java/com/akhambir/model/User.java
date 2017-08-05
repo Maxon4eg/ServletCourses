@@ -12,7 +12,7 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.token = token;
-        this.email=email;
+        this.email = email;
     }
 
     public String getToken() {

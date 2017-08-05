@@ -1,10 +1,12 @@
 package com.akhambir.factory;
 
+import com.akhambir.controller.Controller;
 import com.akhambir.controller.CreateUserController;
 import com.akhambir.controller.GetAllCategoriesController;
-import com.akhambir.dao.UserDaoImpl;
+import com.akhambir.controller.HomeController;
 import com.akhambir.dao.CategoryDao;
 import com.akhambir.dao.CategoryDaoImpl;
+import com.akhambir.dao.UserDaoImpl;
 import com.akhambir.service.CategoryService;
 import com.akhambir.service.CategoryServiceImpl;
 import com.akhambir.service.UserService;
@@ -43,10 +45,15 @@ public class Factory {
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
-            connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+            connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "sa");
         } catch (Exception e) {
             throw new RuntimeException("Driver was not initialized");
         }
         return connection;
     }
+
+    public static Controller getHomeController() {
+        return new HomeController();
+    }
+
 }
